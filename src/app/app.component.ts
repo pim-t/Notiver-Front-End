@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {webSocket, WebSocketSubject} from 'rxjs/webSocket';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,7 +23,10 @@ export class AppComponent {
 
   sendMessageToServer() {
     console.log("Clicked")
-    this.myWebSocket.next({message: 'some message'});
+
+    const text = (document.getElementById('textExample') as HTMLTextAreaElement).value;
+    console.log(text)
+    this.myWebSocket.next({message: text});
   }
 
 }
