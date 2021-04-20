@@ -1,52 +1,10 @@
-section {
-    display: table;
-  }
-  
-  .example-label {
-    display: table-cell;
-    font-size: 14px;
-    margin-left: 8px;
-    min-width: 120px;
-  }
-  
-  .example-button-row {
-    display: table-cell;
-    width: 490px;
-  }
-  
-  .example-button-row .mat-button-base {
-    margin: 8px 8px 8px 0;
-  }
-  
-  .example-flex-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .example-button-container {
-    display: flex;
-    justify-content: center;
-    width: 120px;
-  }
-  
 
-  .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
   
   h1{
 	text-align:center;
 	font-size:4em;
 	margin-top:5%;
-  font-family: 'Source Code Pro';
-  text-shadow: 0px 2px 3px #C0C0C0;
+  font-family: 'Source Sans Pro', sans-serif;
 	-webkit-animation: colorFade 5s;
 	-moz-animation: colorFade 5s;
     animation: colorFade 5s;
