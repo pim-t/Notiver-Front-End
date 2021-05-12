@@ -12,7 +12,7 @@ export class AppComponent {
 
   constructor() {
     this.myWebSocket.subscribe(
-      msg => console.log('message received: ' + msg),
+      msg => console.log('message received: ' + JSON.stringify(msg)),
       // Called whenever there is a message from the server
       err => console.log(err),
       // Called if WebSocket API signals some kind of error
@@ -21,12 +21,21 @@ export class AppComponent {
    );
   }
 
+ 
   sendMessageToServer() {
-    console.log("Clicked")
-
+    console.log("Clicked");
     const text = (document.getElementById('textExample') as HTMLTextAreaElement).value;
     console.log(text)
-    this.myWebSocket.next({message: text});
-  }
+    this.myWebSocket.next({text});
+  }  
+
+//   private  autoSaveContent() {
+//     setInterval(() => {
+//         if (this.isSaving == false && this.hasContentChanged() == true) {
+//             this.saveContent();
+//         }
+//     }, 10000);
+// }
+
 
 }
