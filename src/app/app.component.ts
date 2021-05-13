@@ -12,13 +12,15 @@ export class AppComponent {
 
   constructor() {
     this.myWebSocket.subscribe(
-      msg => console.log('message received: ' + JSON.stringify(msg)),
+      msg => (document.getElementById('textExample') as HTMLTextAreaElement).value = JSON.stringify(msg["other info"]),
+      // console.log('message received: ' + JSON.stringify(msg)),
       // Called whenever there is a message from the server
       err => console.log(err),
       // Called if WebSocket API signals some kind of error
       () => console.log('complete')
       // Called when connection is closed (for whatever reason)
    );
+   
   }
 
  
@@ -26,8 +28,18 @@ export class AppComponent {
     console.log("Clicked");
     const text = (document.getElementById('textExample') as HTMLTextAreaElement).value;
     console.log(text)
-    this.myWebSocket.next({text});
-  }  
+    this.myWebSocket.next(text);
+  } 
+
+  getMessageFromServer() { 
+    this.myWebSocket.next({id: "search"}); 
+    console.log("Retrieving");
+    (document.getElementById('textExample') as HTMLTextAreaElement).value = "testing";
+  }
+
+  autosaveContent() { 
+    
+  }
 
 //   private  autoSaveContent() {
 //     setInterval(() => {
