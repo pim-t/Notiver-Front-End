@@ -1,5 +1,7 @@
+import { Text } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component } from '@angular/core';
 import {webSocket, WebSocketSubject} from 'rxjs/webSocket';
+import {delay} from 'rxjs/operators'; 
 
 
 @Component({
@@ -28,26 +30,22 @@ export class AppComponent {
     console.log("Clicked");
     const text = (document.getElementById('textExample') as HTMLTextAreaElement).value;
     console.log(text)
-    this.myWebSocket.next(text);
+    this.myWebSocket.next({"id": "new_doc", "other_info": text});
   } 
 
   getMessageFromServer() { 
-    this.myWebSocket.next({id: "search"}); 
+    this.myWebSocket.next({id: "search", "other_info": "text"}); 
     console.log("Retrieving");
-    (document.getElementById('textExample') as HTMLTextAreaElement).value = "testing";
+    // (document.getElementById('textExample') as HTMLTextAreaElement).value = "testing";
   }
-
+ 
   autosaveContent() { 
+    console.log("Updating"); 
+    
+    const text = (document.getElementById('textExample') as HTMLTextAreaElement).value;
+    this.myWebSocket.next({id: "update", "other_info": text}); 
+    delay(500);
     
   }
-
-//   private  autoSaveContent() {
-//     setInterval(() => {
-//         if (this.isSaving == false && this.hasContentChanged() == true) {
-//             this.saveContent();
-//         }
-//     }, 10000);
-// }
-
 
 }

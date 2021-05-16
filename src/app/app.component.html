@@ -6,13 +6,13 @@
 
 <div fxLayout="row">
   <div fxFlex> </div>
-  <div fxFlex><textarea id="textExample" style="border: 1px solid #BBB; color:#444" rows="4" cols="60"></textarea></div>
-  <div fxFlex><button (click)="sendMessageToServer()" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+  <div fxFlex><textarea (change)= "autosaveContent()" id="textExample" style="border: 1px solid #BBB; color:#444" rows="4" cols="60"></textarea></div>
+  <div fxFlex><button (click)="sendMessageToServer()" mat-fab color="primary" aria-label="Save icon">
     
     <mat-icon>save</mat-icon>
   </button></div>
-  <div fxFlex><button (click)="getMessageFromServer()" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+  <div fxFlex><button (click)="getMessageFromServer()" mat-fab color="primary" aria-label="file icon">
     
-    <mat-icon>save</mat-icon>
+    <mat-icon>insert_drive_file</mat-icon>
   </button></div>
 </div>
