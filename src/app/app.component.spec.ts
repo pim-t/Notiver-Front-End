@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it(`should have as title 'angular-websockets-client'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-websockets-client');
+    expect(app.title).toEqual('Notiver');
   });
 
   it('should render title', () => {

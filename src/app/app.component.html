@@ -1,18 +1,20 @@
 
+<app-side-nav 
+[sidenavTemplateRef]="navContent"
+[direction]="'left'" 
+[navWidth]="280" 
+[duration]="0.5"></app-side-nav>
 
-
-<h1> Notiver Attempt </h1> 
-
-
-<div fxLayout="row">
-  <div fxFlex> </div>
-  <div fxFlex><textarea (change)= "autosaveContent()" id="textExample" style="border: 1px solid #BBB; color:#444" rows="4" cols="60"></textarea></div>
-  <div fxFlex><button (click)="sendMessageToServer()" mat-fab color="primary" aria-label="Save icon">
-    
-    <mat-icon>save</mat-icon>
-  </button></div>
-  <div fxFlex><button (click)="getMessageFromServer()" mat-fab color="primary" aria-label="file icon">
-    
-    <mat-icon>insert_drive_file</mat-icon>
-  </button></div>
+<div class="main-container">
+<app-header></app-header>
+<section>
+  <router-outlet></router-outlet>
+</section>
 </div>
+
+<ng-template #navContent>
+Side Nav Bar Content Here
+</ng-template>
+
+
+

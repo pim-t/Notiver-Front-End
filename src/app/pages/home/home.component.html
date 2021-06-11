@@ -1,0 +1,23 @@
+
+<h1> Notiver</h1> 
+
+
+  <div id="window">
+    <div id="buttons">
+      <a href="#" id="minimize"></a>
+      <a href="#" id="resize"></a>
+      <a href="#" id="close"></a>
+    </div>
+    
+    <div id="title">Notepad</div>
+    <textarea (change)= "autosaveContent()" id="textarea"></textarea>
+
+    <button (click)="getMessageFromServer()" mat-fab color="primary" aria-label="file icon">
+        <mat-icon>insert_drive_file</mat-icon>
+      </button>
+
+      <button (click)="sendMessageToServer()" mat-fab color="primary" aria-label="Save icon">
+    
+        <mat-icon>save</mat-icon>
+      </button>
+  </div>
