@@ -11,6 +11,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 
@@ -28,7 +31,9 @@ import { HomeComponent } from './pages/home/home.component';
     MatButtonModule, 
     MatCheckboxModule, 
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
